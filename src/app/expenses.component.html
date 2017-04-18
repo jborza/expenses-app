@@ -1,0 +1,29 @@
+﻿<!--expense editor-->
+<div id="expenseEditor">
+  <h1>Expense: {{expense.amount}} €</h1>
+  <div>
+    <label> Amount:</label>
+    <input [(ngModel)]="expense.amount" placeholder="amount">  €
+  </div>
+  <div>
+    <select id="category" [(ngModel)]="expense.category" required>
+      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+    </select>
+  </div>
+  <div>
+    <label> Date: </label>
+    <input type="date" #myDate [value]="expense.date | date:'yyyy-MM-dd'" (input)="expense.date=parseDate($event.target.value)" />
+  </div>
+  <div>
+    <label> Note: </label>
+    <textarea [(ngModel)]="expense.description"></textarea>
+  </div>
+  <div>
+    <label> Account: </label>
+    <input [(ngModel)]="expense.owner">
+  </div>
+  <hr />
+  <button type="button" class="btn btn-default" (click)="btnClick()">Test</button>
+
+</div>
+{{diagnostic}}

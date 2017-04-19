@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
         this.expensesByCategory = _(this.expenses)
             .groupBy(x => x.category)
             .toPairs()
-            .map(p => ({ name: p[0], items:p[1] }))
+            .map(p => ({ name: p[0], sum: _.sumBy(p[1], n => n.amount)}))
             .value();
         //this.expensesByCategory = _.groupBy(this.expenses, item => item.category);
 

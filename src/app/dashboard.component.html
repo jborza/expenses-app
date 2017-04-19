@@ -14,10 +14,7 @@
   expenses by category:
   <div *ngFor="let ex of expensesByCategory">
     <div>
-      <h4>{{ex.name}}</h4>
-      <div *ngFor="let item of ex.items">
-        {{item.amount}}
-      </div>
+      <h4>{{ex.name}} - {{ex.sum}}</h4>
     </div>
   </div>
 </div>

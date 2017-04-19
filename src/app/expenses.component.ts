@@ -1,27 +1,28 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 
 import { Expense } from './expense';
+import { ExpenseService } from './expense.service';
 
 @Component({
     selector: 'expenses',
     templateUrl: 'expenses.component.html',
     //styleUrls:['app/expenses.component.css']
 })
-export class ExpensesComponent {
-    categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
-
-    constructor() {
-        let x = new Expense();
-        x.description = "haha";
+export class ExpensesComponent implements OnInit {
+    constructor(private expenseService: ExpenseService) {
     }
 
-    expense: Expense = {
-        id: 1,
-        amount: 3.99,
-        description: 'Lunch',
-        category: 'Food',
-        date: new Date("March 16 2017, 12:00")
-    };
+    categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
+    expenses: Expense[];
+    expense: Expense;
+    
+    getExpenses(){
+        this.expenseService.getExpenses().then(expenses => this.expenses = expenses);
+    }
+
+    ngOnInit(): void {
+        this.getExpenses();    
+    }
 
     parseDate(dateString: string): Date {
         if (dateString) {
@@ -29,6 +30,10 @@ export class ExpensesComponent {
         } else {
             return null;
         }
+    }
+
+    onSelect(expense: Expense): void {
+        this.expense = expense;
     }
 
     get diagnostic() {

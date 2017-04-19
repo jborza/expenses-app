@@ -1,0 +1,21 @@
+﻿<h3>Expenses overview</h3>
+<div >
+  expenses:
+  <div *ngFor="let item of expenses" >
+    <div>
+      <h4>{{item.id}}: {{item.amount}}</h4>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div>
+  expenses by category:
+  <div *ngFor="let ex of expensesByCategory">
+    <div>
+      <h4>{{ex}}</h4>
+    </div>
+  </div>
+</div>
+-->

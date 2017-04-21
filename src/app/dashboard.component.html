@@ -1,20 +1,19 @@
-﻿<h3>Expenses overview</h3>
-<div >
-  expenses:
-  <div *ngFor="let item of expenses" >
+﻿<h2>Expense overview</h2>
+
+<div>
+  <h3>by category:</h3>
+  <div *ngFor="let ex of expensesByCategory">
     <div>
-      <h4>{{item.id}}: {{item.amount}}</h4>
+      <h4>{{ex.name}}: {{ex.sum}}</h4>
     </div>
   </div>
 </div>
 
-
-
 <div>
-  expenses by category:
-  <div *ngFor="let ex of expensesByCategory">
+  <h3>by day:</h3>
+  <div *ngFor="let ex of expensesByDay">
     <div>
-      <h4>{{ex.name}} - {{ex.sum}}</h4>
+      <h4>{{ex.day}}: {{ex.sum}}</h4>
     </div>
   </div>
 </div>

@@ -26,17 +26,21 @@ export class DashboardComponent implements OnInit {
 
     groupData(data: Expense[]) {
         this.expenses = data;
+        console.log(data);
 
-        this.expensesByCategory = _(this.expenses)
+        this.expensesByCategory = _(data)
             .groupBy(x => x.category)
             .toPairs()
             .map(p => ({ name: p[0], sum: _.sumBy(p[1], n => n.amount)}))
             .value();
-        //this.expensesByCategory = _.groupBy(this.expenses, item => item.category);
+        
+        this.expensesByDay = _(data)
+            .groupBy(x => x.dateIso())
+            .toPairs()
+            .map(p => ({ day: p[0], sum: _.sumBy(p[1], n => n.amount)}))
+            .value();
 
-        //this.expensesByDay = _.groupBy(this.expenses, item => Math.floor(item.date.getTime() / (1000 * 60 * 60 / 24)));
-        console.log(this.expensesByCategory);
-        //console.log(this.expensesByDay);
+        console.log(this.expensesByDay);
     }
 
 }

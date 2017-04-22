@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 
 import { ExpensesComponent } from './expenses.component';
 import { DashboardComponent } from './dashboard.component';
+import { ExpenseEditorComponent } from './expense-editor.component';
+
 import { ExpenseService } from './expense.service';
 
 import { PageNotFoundComponent } from './pagenotfound.component';
@@ -18,7 +20,8 @@ import { PageNotFoundComponent } from './pagenotfound.component';
       AppComponent,
       ExpensesComponent,
       PageNotFoundComponent,
-      DashboardComponent
+      DashboardComponent,
+      ExpenseEditorComponent
   ],
   imports: [
     BrowserModule,

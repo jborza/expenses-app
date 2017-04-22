@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Expense } from './expense';
 import { ExpenseService } from './expense.service';
 
@@ -9,8 +9,9 @@ import { ExpenseService } from './expense.service';
     //styleUrls:['app/expenses.component.css']
 })
 export class ExpensesComponent implements OnInit {
-    constructor(private expenseService: ExpenseService) {
-    }
+    constructor(
+        private expenseService: ExpenseService,
+        private router: Router) {    }
 
     categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
     expenses: Expense[];
@@ -39,4 +40,9 @@ export class ExpensesComponent implements OnInit {
     get diagnostic() {
         return JSON.stringify(this.expense);
     }
+
+    goToDetail(): void {
+        this.router.navigate(['/detail', this.expense.id]);
+    }
+
 }

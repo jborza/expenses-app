@@ -1,12 +1,4 @@
-﻿<!--list of expenses-->
-<div id="expenses">
-  <ul>
-    <li *ngFor="let expense of expenses" (click)="onSelect(expense)">
-       <span>{{expense.id}}: {{expense.description}} ({{expense.category}}) - {{expense.amount}}</span>
-    </li>
-  </ul>
-</div>
-<!--expense editor-->
+﻿Hi from expense editor component!
 <div *ngIf="expense">
   <div id="expenseEditor">
     <h1>Expense: {{expense.amount}} €</h1>
@@ -32,9 +24,6 @@
       <input [(ngModel)]="expense.owner">
     </div>
     <hr />
-    <button type="button" class="btn btn-default" (click)="btnClick()">Test</button>
-
+    <button (click)="goBack()">Back</button>
   </div>
-  <button (click)="goToDetail()">View Details</button>
-  {{diagnostic}}
 </div>

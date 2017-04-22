@@ -1,5 +1,5 @@
 ﻿export class Expense{
-    public constructor(id,amount,category,description,date) {
+    public constructor(id,amount,description,category,date) {
         this.id = id;
         this.amount = amount;
         this.category = category;

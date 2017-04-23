@@ -6,6 +6,7 @@
       <input [(ngModel)]="expense.amount" placeholder="amount">  €
     </div>
     <div>
+      <label>Category:</label>
       <select id="category" [(ngModel)]="expense.category" required>
         <option *ngFor="let category of categories" [value]="category">{{category}}</option>
       </select>

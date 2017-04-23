@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Expense } from './expense';
 import { ExpenseService } from './expense.service';
+import { CategoryService } from './category.service';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -13,10 +14,12 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ExpenseEditorComponent implements OnInit {
     private expense: Expense;
-    categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
+    private categories: string[];
+    //categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
 
     constructor(
         private expenseService: ExpenseService,
+        private categoryService: CategoryService,
         private route: ActivatedRoute,
         private location: Location
     ) { }
@@ -24,6 +27,7 @@ export class ExpenseEditorComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.switchMap((params: Params) => this.expenseService.getExpense(+params['id']))
             .subscribe(item => this.expense = item);
+        this.categoryService.getCategories().then(d => this.categories = d);
     }
 
     goBack(): void {

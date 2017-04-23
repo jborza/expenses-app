@@ -15,7 +15,6 @@ import 'rxjs/add/operator/switchMap';
 export class ExpenseEditorComponent implements OnInit {
     private expense: Expense;
     private categories: string[];
-    //categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
 
     constructor(
         private expenseService: ExpenseService,
@@ -28,6 +27,14 @@ export class ExpenseEditorComponent implements OnInit {
         this.route.params.switchMap((params: Params) => this.expenseService.getExpense(+params['id']))
             .subscribe(item => this.expense = item);
         this.categoryService.getCategories().then(d => this.categories = d);
+    }
+
+    parseDate(dateString: string): Date {
+        if (dateString) {
+            return new Date(dateString);
+        } else {
+            return null;
+        }
     }
 
     goBack(): void {

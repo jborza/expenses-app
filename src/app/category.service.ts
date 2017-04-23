@@ -1,9 +1,11 @@
 ﻿import { Injectable } from '@angular/core';
 
+import { Category } from './category';
+import { CATEGORIES } from './mock-categories';
+
 @Injectable()
 export class CategoryService {
-    getCategories(): Promise<string[]> {
-        const categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
-        return Promise.resolve(categories);
+    getCategories(): Promise<Category[]> {
+        return Promise.resolve(CATEGORIES);
     }
 }

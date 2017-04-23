@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 
 import { Expense } from './expense';
 import { ExpenseService } from './expense.service';
+
+import { Category } from './category';
 import { CategoryService } from './category.service';
 
 import 'rxjs/add/operator/switchMap';
@@ -14,7 +16,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ExpenseEditorComponent implements OnInit {
     private expense: Expense;
-    private categories: string[];
+    private categories: Category[];
 
     constructor(
         private expenseService: ExpenseService,

@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard.component';
 import { ExpenseEditorComponent } from './expense-editor.component';
 
 import { ExpenseService } from './expense.service';
+import { CategoryService } from './category.service';
 
 import { PageNotFoundComponent } from './pagenotfound.component';
 
@@ -30,7 +31,8 @@ import { PageNotFoundComponent } from './pagenotfound.component';
     AppRoutingModule,
   ],
   providers: [
-      ExpenseService
+      ExpenseService,
+      CategoryService
   ],
   bootstrap: [AppComponent]
 })

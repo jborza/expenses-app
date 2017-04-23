@@ -1,0 +1,20 @@
+﻿<div id="expenseDetail" *ngIf="expense">
+<h3>Details</h3>
+  <div>
+    <label> Amount:</label>
+    {{expense.amonut}}  €
+  </div>
+  <div>
+    <label>Category</label>
+    {{expense.category}}
+  </div>
+  <div>
+    <label> Date: </label>
+    {{expense.date | date:'yyyy-MM-dd'}}
+  </div>
+  <div>
+    <label> Note: </label>
+    {{expense.description}}
+  </div>
+  <button (click)="goToDetail()"> Edit</button>
+</div>

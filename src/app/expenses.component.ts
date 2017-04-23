@@ -13,7 +13,6 @@ export class ExpensesComponent implements OnInit {
         private expenseService: ExpenseService,
         private router: Router) {    }
 
-    categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
     expenses: Expense[];
     expense: Expense;
     
@@ -23,14 +22,6 @@ export class ExpensesComponent implements OnInit {
 
     ngOnInit(): void {
         this.getExpenses();    
-    }
-
-    parseDate(dateString: string): Date {
-        if (dateString) {
-            return new Date(dateString);
-        } else {
-            return null;
-        }
     }
 
     onSelect(expense: Expense): void {

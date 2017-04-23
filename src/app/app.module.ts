@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses.component';
 import { DashboardComponent } from './dashboard.component';
 import { ExpenseEditorComponent } from './expense-editor.component';
+import { ExpenseDetailComponent } from './expense-detail.component';
 
 import { ExpenseService } from './expense.service';
 import { CategoryService } from './category.service';
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './pagenotfound.component';
       ExpensesComponent,
       PageNotFoundComponent,
       DashboardComponent,
-      ExpenseEditorComponent
+      ExpenseEditorComponent,
+      ExpenseDetailComponent
   ],
   imports: [
     BrowserModule,

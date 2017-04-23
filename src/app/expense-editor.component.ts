@@ -13,6 +13,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ExpenseEditorComponent implements OnInit {
     private expense: Expense;
+    categories = ['Car', 'Food', 'Wardrobe', 'Home', 'Personal', 'Amusement'];
 
     constructor(
         private expenseService: ExpenseService,

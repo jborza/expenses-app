@@ -1,5 +1,4 @@
-﻿Hi from expense editor component!
-<div *ngIf="expense">
+﻿<div *ngIf="expense">
   <div id="expenseEditor">
     <h1>Expense: {{expense.amount}} €</h1>
     <div>
@@ -18,10 +17,6 @@
     <div>
       <label> Note: </label>
       <textarea [(ngModel)]="expense.description"></textarea>
-    </div>
-    <div>
-      <label> Account: </label>
-      <input [(ngModel)]="expense.owner">
     </div>
     <hr />
     <button (click)="goBack()">Back</button>

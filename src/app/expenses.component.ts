@@ -37,10 +37,6 @@ export class ExpensesComponent implements OnInit {
         this.expense = expense;
     }
 
-    get diagnostic() {
-        return JSON.stringify(this.expense);
-    }
-
     goToDetail(): void {
         this.router.navigate(['/detail', this.expense.id]);
     }

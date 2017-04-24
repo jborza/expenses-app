@@ -17,6 +17,8 @@ import { CategoryService } from './category.service';
 
 import { PageNotFoundComponent } from './pagenotfound.component';
 
+import { NavbarComponent } from './navbar.component';
+
 @NgModule({
   declarations: [
       AppComponent,
@@ -24,7 +26,8 @@ import { PageNotFoundComponent } from './pagenotfound.component';
       PageNotFoundComponent,
       DashboardComponent,
       ExpenseEditorComponent,
-      ExpenseDetailComponent
+      ExpenseDetailComponent,
+      NavbarComponent
   ],
   imports: [
     BrowserModule,
